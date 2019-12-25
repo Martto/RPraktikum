@@ -10,7 +10,7 @@ int main() {
 	printf("Vnesite stevilo vrstic (V) in stolpcev (S) matrike: ");
 	scanf("%d %d", &v, &s);
     
-    if ((v < 0 || v >= 10) || (s < 0 || s >= 10)) {
+    	if ((v < 0 || v >= 10) || (s < 0 || s >= 10)) {
 		printf("Napaka: Podati morate pozitivni stevili vrstic in stolpcev, ki sta manjši od 10!\n");
 		return 1;
 	}
@@ -30,8 +30,8 @@ int main() {
 
 	//izpis matrike
 	printf("Vnesena matrika: \n");
-    globalna = s;
-    izpis_matrike(matrika, v, s);
+    	globalna = s;
+    	izpis_matrike(matrika, v, s);
 	printf("\n");
 
 	//transponiranje matrike
@@ -45,8 +45,8 @@ int main() {
 
 	//izpis transponirane matrike
 	printf("Transponirana matrika: \n");
-    globalna = v;
-    izpis_matrike(transMatrika, s, v);
+    	globalna = v;
+    	izpis_matrike(transMatrika, s, v);
 
 	return 0;
 }
