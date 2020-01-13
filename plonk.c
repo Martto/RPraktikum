@@ -1,5 +1,19 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <string.h>
 
+void funkcija();
+int random();
+
+/*
+%c - char
+%d - decimal
+%f - float
+%s - string
+*/
+
+void izpisArgumentovCifer(int stevila[], int n);
 void funkcija();
 int random();
 
@@ -7,18 +21,39 @@ int main(int argc, char *argv[]) {
     ukazi;
     
     if (argc == 2) {
-        printf("Argument je %s", argv[1]);
+        printf("Argument je %s", argv[1]); 
     }
     else if (argc > 2) {
         printf("Preveč argumentov");
+        int a = atoi(argv[1]);
+        int op = *argv[2];
+        int b = atoi(argv[3]);
+        int rezultat = a + b;
+        printf("Rezultat je %d", rezultat);
     } else {
         printf("Pričakoval sem en argument");
+    }
+    
+    int cifre[argv-1];
+    
+    if (argv-1 >= 1) {
+        for (int i = 1; i < argc; i++) {
+            cifre[i-1] = argv[i];
+        }
+        izpisArgumentovCifer(cifre, argc-1);
     }
 
 
     printf("%d", random());
 
     return 0;
+}
+
+void izpisArgumentovCifer(int stevila[], int n) {
+    printf("Izpis cifer, ki so bile podane kot argumenti: \n");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", stevila[i]);
+    }
 }
 
 void funkcija() {
